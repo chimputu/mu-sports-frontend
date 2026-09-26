@@ -4,12 +4,11 @@
   "private": true,
   "description": "Next.js frontend for the MU Sports platform at Mulungushi University.",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "format": "prettier --write \"src/**/*.{js,jsx,css,md}\""
+    "postinstall": "prisma generate",
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "build": "prisma generate",
+    "vercel-build": "prisma generate && prisma migrate deploy"
   },
   "dependencies": {
     "lucide-react": "^0.454.0",
